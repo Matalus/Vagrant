@@ -1,9 +1,12 @@
+# Vagrantfile to provision a server 2012 R2 Base image with a number of packages bootstrapped
+# Created by Matt Hamende
 Vagrant.configure("2") do |config|
-  config.vm.box = "devopsguys/Windows2012R2Eval"
+  config.vm.box = "devopsguys/Windows2012R2Eval" #base image
   config.vm.box_version = "1.0.0"
-  config.vm.network "private_network", type: "dhcp"
-  config.vm.network "forwarded_port", guest: 5985, host: 5986
-  config.vm.network "forwarded_port", guest: 8080, host: 8080
-  config.vm.provision :shell, path: "shell/main.cmd"
-  config.vm.provision :shell, path: "shell/InstallChocoPackages.bat"
+  config.vm.network "private_network", type: "dhcp" #get IP from local gateway via Virtual Box
+  config.vm.network "forwarded_port", guest: 5985, host: 5986 # WinRM
+  config.vm.network "forwarded_port", guest: 8080, host: 8080 # Jenkins
+  config.vm.provision :shell, path: "shell/winrm_firewall.ps1" # Open up ports for WinRM
+  config.vm.provision :shell, path: "shell/main.cmd" #Main provisioning script, installs Chocolatey
+  config.vm.provision :shell, path: "shell/InstallChocoPackages.bat" #Installs several Chocolatey Packages
 end
