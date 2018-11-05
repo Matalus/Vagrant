@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
     vb.gui = true
     vb.memory = "4096"
   end
-  config.vm.provision :shell, path: "shell/main.cmd" #Main provisioning script, installs Chocolateyvag
+  config.vm.provision :shell, path: "shell/main.cmd" #Main provisioning script, installs Chocolatey
   config.vm.provision :shell, path: "shell/InstallChocoDotnetcore.bat" #Installs dotnetcore Chocolatey Packages
   config.vm.provision :reload #reboots post dotnetcore install as is required with older OS
   config.vm.provision :shell, path: "shell/InstallChocoPSCore.bat" #Resumes Installs powershell-core Chocolatey Packages
