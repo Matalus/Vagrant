@@ -1,8 +1,8 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "datacastle/windows7"
+  config.vm.box = "datacastle/windows7" #Windows 7 Baseline Image
   config.vm.box_version = "1.0"
   config.vm.provider "virtualbox" do | vb |
-    vb.gui = true
+    vb.gui = true # normal non-headless boot
     vb.memory = "4096"
   end
   config.vm.provision :shell, path: "shell/main.cmd" #Main provisioning script, installs Chocolatey

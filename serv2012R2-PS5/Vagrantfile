@@ -7,17 +7,18 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 5985, host: 5986 # WinRM
   config.vm.network "forwarded_port", guest: 8080, host: 8080 # Jenkins
   config.vm.provision :shell, path: "shell/GetComputerName.ps1" #Get ComputerName
-  config.vm.provision :shell, path: "shell/sysprep.bat" #Sysprep machine
-  config.vm.provision :reload
-  config.vm.provision :shell, path: "shell/baseline_os.ps1" #Get SID and set ComputerName
+  #config.vm.provision :shell, path: "shell/sysprep.bat" #Sysprep machine
+  #config.vm.provision :reload
+  config.vm.provision :shell, path: "shell/baseline_os.ps1", privileged: true #Get SID and set ComputerName
   config.vm.provision :shell, path: "shell/GetComputerName.ps1" #Get ComputerName
-  config.vm.provision :shell, path: "shell/winrm_firewall.ps1" # Open up ports for WinRM
+  config.vm.provision :shell, path: "shell/winrm_firewall.ps1", privileged: true # Open up ports for WinRM
   config.vm.provision :shell, path: "shell/wmiuser.bat" #create local test user
   config.vm.provision :shell, path: "shell/Set-DCOMPermissions.ps1" #Set DCOM permissions
   config.vm.provision :shell, path: "shell/main.cmd" #Main provisioning script, installs Chocolatey
   config.vm.provision :shell, path: "shell/Set-WMINameSpaceSecurity-Root.ps1"
   config.vm.provision :shell, path: "shell/Set-WMINameSpaceSecurity-WMI.ps1"
   config.vm.provision :shell, path: "shell/Set-WMINameSpaceSecurity-CIMV2.ps1"
-  config.vm.provision :shell, path: "shell/Install-IIS.ps1" #install IIS windows features
-  config.vm.provision :shell, path: "shell/Enable-IISRemote.ps1" # enable remote administration
+  config.vm.provision :shell, path: "shell/Install-IIS.ps1", privileged: true #install IIS windows features
+  config.vm.provision :shell, path: "shell/Enable-IISRemote.ps1", privileged: true #enable remote administration
+  config.vm.provision :shell, path: "shell/Deploy-Test-Sites.ps1", privileged: true #Deploy test sites
 end

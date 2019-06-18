@@ -1,5 +1,5 @@
 #verify new SID and set Computername
-$ComputerName = "UHISYSPREPD01"
+$ComputerName = "MATTBOX"
 
 $SID = (Get-WmiObject Win32_UserAccount)[0].SID
 
