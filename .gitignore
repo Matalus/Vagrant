@@ -1,3 +1,14 @@
 ### Vagrant ####
 *.tmp
 .Vagrant/
+*.exe
+*.msi
+serv2012R2-PS5/Client_Logging_Sample-IIS_Smooth_Streaming_Beta.exe
+serv2012R2-PS5/WinRMPermissions.ps1
+serv2012R2-PS5/plugin.xml
+serv2012R2-PS5/unattend.xml
+serv2012R2-PS5/DumpButler/config.json
+serv2012R2-PS5/ModifyPool/BackupConfig.json
+serv2012R2-PS5/ModifyPool/config.json
+serv2012R2-PS5/ModifyPool/.vscode/launch.json
+serv2012R2-PS5/shell/dcom-permissions.txt

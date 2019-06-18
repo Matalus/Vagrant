@@ -1,0 +1,3 @@
+Import-Module c:\vagrant\shell\DCOMPermissions.psm1
+Grant-DComPermission -ApplicationID "{752073A2-23F2-4396-85F0-8FDB879ED0ED}" -Type Launch -Permissions LocalLaunch,LocalActivation,RemoteLaunch,RemoteActivation -Account "Remote Management Users" -OverrideConfigurationPermissions
+Grant-DComPermission -ApplicationID "{752073A2-23F2-4396-85F0-8FDB879ED0ED}" -Type Access -Permissions LocalAccess,RemoteAccess -Account "Remote Management Users" -OverrideConfigurationPermissions
