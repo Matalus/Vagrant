@@ -21,6 +21,14 @@ Built using virtualbox 6.0, vagrant 2.2.4, PowerShell 5.1
 * Install Vagrant
 * Install Virtual Box
 * From directory of Vagrantfile run "vagrant up"
+* (optional) Add the following hostfile (c:\windows\system32\drivers\etc\hosts) segment to get sites to resolve locally, remember to "Ipconfig /flushdns"
+
+#Host File Segment for IIS Sandbox
+172.28.128.4 testsite01.org
+172.28.128.4 testsite02.org
+172.28.128.4 testsite03.org
+172.28.128.4 testsite04.org
+172.28.128.4 testsite05.org
 
 ## Built With
 
