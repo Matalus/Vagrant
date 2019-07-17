@@ -1,4 +1,4 @@
-# IIS 8.5
+# IIS Bootstrapped Sandbox
 
 This is my full bootstrapped Server 2012R2 VM that I use for sandbox testing, 
 This Vagrant file and included scripts will:
