@@ -1,8 +1,0 @@
-### Vagrant ####
-*.tmp
-.Vagrant/
-*.exe
-*.msi
-*.xml
-*.old.config
-serv2012R2-PS5/shell/dcom-permissions.txt
