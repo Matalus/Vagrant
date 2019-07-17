@@ -2,11 +2,13 @@
 
 $Key = "HKLM:\SOFTWARE\Microsoft\WebManagement\Server\EnableRemoteManagement"
 
-$GetKey = Get-Item $Key
+$GetKey = Get-Item $Key -ErrorAction SilentlyContinue
 
 if(!$GetKey){
    "Adding Key"
-   New-Item $Key -Value 1
+   Try{
+      New-Item $Key -Value 1
+   }Catch{}
 }else{
    "Key Exists"
 }
