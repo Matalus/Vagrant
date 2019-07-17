@@ -21,7 +21,7 @@ Built using virtualbox 6.0, vagrant 2.2.4, PowerShell 5.1
 * Install Vagrant
 * Install Virtual Box
 * From directory of Vagrantfile run "vagrant up"
-* (optional) Add the following hostfile [Hosts](hosts) (c:\windows\system32\drivers\etc\hosts) segment to get sites to resolve locally, remember to "Ipconfig /flushdns"
+* (optional) Add the following hostfile [Hosts](https://github.com/Matalus/Vagrant/blob/master/serv2012R2-PS5/Hosts) (c:\windows\system32\drivers\etc\hosts) segment to get sites to resolve locally, remember to "Ipconfig /flushdns" any time you modify Hosts
 
 ## Built With
 
