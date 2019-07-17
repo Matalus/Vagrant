@@ -92,7 +92,7 @@ ForEach($site in $Count){
 
     #Deploy Content to each test site
     Write-Host "Copying Content Files"
-    Get-ChildItem "$RunDir\TestSite" | Copy-Item -Destination $SiteParams.PhysicalPath -Force
+    Get-ChildItem "C:\Vagrant\shell\TestSite" | Copy-Item -Destination $SiteParams.PhysicalPath -Force
 
     #Deploy Virtual Directory
     "Creating Virtual Directory"
@@ -106,4 +106,4 @@ ForEach($site in $Count){
 }
 
 "Deploying Host File"
-Copy-Item "$RunDir\Hosts" -Destination "c:\windows\System32\drivers\etc" -Force
+Copy-Item "C:\Vagrant\shell\Hosts" -Destination "c:\windows\System32\drivers\etc" -Force
