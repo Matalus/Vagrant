@@ -20,8 +20,8 @@ Built using virtualbox 6.0, vagrant 2.2.4, PowerShell 5.1
 
 * Install Vagrant
 * Install Virtual Box
-* From directory of Vagrantfile run "vagrant up"
-* (optional) Add the following hostfile [Hosts](https://github.com/Matalus/Vagrant/blob/master/serv2012R2-PS5/Hosts) (c:\windows\system32\drivers\etc\hosts) segment to get sites to resolve locally, remember to "Ipconfig /flushdns" any time you modify Hosts
+* From directory of Vagrantfile run **vagrant up**
+* (optional) Add the following hostfile [Hosts](https://github.com/Matalus/Vagrant/blob/master/serv2012R2-PS5/Hosts) (c:\windows\system32\drivers\etc\hosts) segment to get sites to resolve locally, remember to run **ipconfig /flushdns** any time you modify Hosts
 
 ## Built With
 
@@ -30,6 +30,11 @@ Built using virtualbox 6.0, vagrant 2.2.4, PowerShell 5.1
 * [Chocolatey](https://chocolatey.org/) - Windows Package Management
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Caveats
+
+If you recieve an error like **Failed to attach the network LUN (VERR_INTNET_FLT_IF_NOT_FOUND).**
+* Sometimes windows updates will break the Host-Only network adapter for Virtualbox, where it's necessary to disable the NDIS6 Driver, then disable and re-enable the network interface [link](https://www.virtualbox.org/ticket/14832)
 
 ## Acknowledgments
 
