@@ -32,4 +32,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Thank you to anyone and their codes that was used to make this project
+* Thank you to anyone that either helped me or from who I begged, borrowed or stole code to build this project
