@@ -4,7 +4,7 @@ REM disable confirmations for package install
 chocolatey feature enable -n=allowGlobalConfirmation
 
 choco install powershell-core
-choco install jre8
+choco install powershell
 choco install nodejs 
 choco install vscode 
 choco install vscode-powershell
