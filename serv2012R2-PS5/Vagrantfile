@@ -3,8 +3,13 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "devopsguys/Windows2012R2Eval" #base image
   config.vm.box_version = "1.0.0"
-  config.vm.memory = 4096
-  config.vm.cpus = 2
+  config.vm.boot_timeout = 600 #extend boot timeout
+  config.winrm.retry_limit = 30 #added for timeouts and disconnects on provisioning
+  config.winrm.retry_delay = 10
+  config.vm.provider :virtualbox do |vb|
+    vb.memory = 4096
+    vb.cpus = 2
+  end
   config.vm.network "private_network", ip: "172.28.128.4"
   config.vm.network "forwarded_port", guest: 5985, host: 5986 # WinRM
   config.vm.network "forwarded_port", guest: 8080, host: 8080 # Jenkins
@@ -13,7 +18,7 @@ Vagrant.configure("2") do |config|
   
   config.vm.provision :shell, path: "shell/main.cmd" #Main provisioning script, installs Chocolatey
   config.vm.provision :shell, path: "shell/InstallChocoPackages.bat" #create local test user
-  config.vm.provision :shell, path: "shell/winrm_firewall.ps1", privileged: true # Open up ports for WinRM
+  config.vm.provision :reload
   config.vm.provision :shell, path: "shell/winrm_firewall.ps1", privileged: true # Open up ports for WinRM
   config.vm.provision :shell, path: "shell/wmiuser.bat" #create local test user
   config.vm.provision :shell, path: "shell/Set-DCOMPermissions.ps1" #Set DCOM permissions
