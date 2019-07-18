@@ -37,6 +37,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 If you recieve an error like **Failed to attach the network LUN (VERR_INTNET_FLT_IF_NOT_FOUND).**
 * Sometimes windows updates will break the Host-Only network adapter for Virtualbox, where it's necessary to disable the NDIS6 Driver, then disable and re-enable the network interface [link](https://www.virtualbox.org/ticket/14832)
 
-## Acknowledgments
+## Acknowledgements
 
 * Thank you to anyone that either helped me or from who I begged, borrowed or stole code to build this project
